@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
     styleUrls: ['app.component.css']
 
 })
-export class AppComponent { }
+export class AppComponent {
+    emoji = ['🎉', '😍', '😜', '👍'];
+    activeEmoji: string = this.emoji[0];
+    changeEmoji() {
+        this.activeEmoji = this.emoji[Math.floor(Math.random() * this.emoji.length)];
+    }
+}
