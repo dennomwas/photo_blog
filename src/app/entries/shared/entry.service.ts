@@ -10,6 +10,11 @@ export class EntryService {
 
     } // end constructor
 
+    addComment(entryId: number, comment: string) {
+        return this.http.post(`/app/entries/${entryId}/comments`, comment)
+            .toPromise();
+    }
+
     getEntries(): Promise<Entry[]> {
         return this.http.get('/app/entries')
             .toPromise()
